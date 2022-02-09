@@ -4,10 +4,13 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/SpringCloud_Demo03.iml" filepath="$PROJECT_DIR$/.idea/SpringCloud_Demo03.iml" />
       <module fileurl="file://$PROJECT_DIR$/day01-SpringCloud01/cloud-demo.iml" filepath="$PROJECT_DIR$/day01-SpringCloud01/cloud-demo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/mq-demo/consumer/consumer.iml" filepath="$PROJECT_DIR$/mq-demo/consumer/consumer.iml" />
       <module fileurl="file://$PROJECT_DIR$/day01-SpringCloud01/eureka-server/eureka-server.iml" filepath="$PROJECT_DIR$/day01-SpringCloud01/eureka-server/eureka-server.iml" />
       <module fileurl="file://$PROJECT_DIR$/day01-SpringCloud01/feign-api/feign-api.iml" filepath="$PROJECT_DIR$/day01-SpringCloud01/feign-api/feign-api.iml" />
       <module fileurl="file://$PROJECT_DIR$/day01-SpringCloud01/gateway/gateway.iml" filepath="$PROJECT_DIR$/day01-SpringCloud01/gateway/gateway.iml" />
+      <module fileurl="file://$PROJECT_DIR$/mq-demo/mq-demo.iml" filepath="$PROJECT_DIR$/mq-demo/mq-demo.iml" />
       <module fileurl="file://$PROJECT_DIR$/day01-SpringCloud01/order-service/order-service.iml" filepath="$PROJECT_DIR$/day01-SpringCloud01/order-service/order-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/mq-demo/publisher/publisher.iml" filepath="$PROJECT_DIR$/mq-demo/publisher/publisher.iml" />
       <module fileurl="file://$PROJECT_DIR$/day01-SpringCloud01/user-service/user-service.iml" filepath="$PROJECT_DIR$/day01-SpringCloud01/user-service/user-service.iml" />
     </modules>
   </component>
