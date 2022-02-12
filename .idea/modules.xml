@@ -8,6 +8,7 @@
       <module fileurl="file://$PROJECT_DIR$/day01-SpringCloud01/eureka-server/eureka-server.iml" filepath="$PROJECT_DIR$/day01-SpringCloud01/eureka-server/eureka-server.iml" />
       <module fileurl="file://$PROJECT_DIR$/day01-SpringCloud01/feign-api/feign-api.iml" filepath="$PROJECT_DIR$/day01-SpringCloud01/feign-api/feign-api.iml" />
       <module fileurl="file://$PROJECT_DIR$/day01-SpringCloud01/gateway/gateway.iml" filepath="$PROJECT_DIR$/day01-SpringCloud01/gateway/gateway.iml" />
+      <module fileurl="file://$PROJECT_DIR$/hotel-admin/hotel-admin.iml" filepath="$PROJECT_DIR$/hotel-admin/hotel-admin.iml" />
       <module fileurl="file://$PROJECT_DIR$/hotel-demo/hotel-demo.iml" filepath="$PROJECT_DIR$/hotel-demo/hotel-demo.iml" />
       <module fileurl="file://$PROJECT_DIR$/mq-demo/mq-demo.iml" filepath="$PROJECT_DIR$/mq-demo/mq-demo.iml" />
       <module fileurl="file://$PROJECT_DIR$/day01-SpringCloud01/order-service/order-service.iml" filepath="$PROJECT_DIR$/day01-SpringCloud01/order-service/order-service.iml" />

@@ -18,6 +18,10 @@ import org.elasticsearch.search.aggregations.bucket.terms.Terms;
 import org.elasticsearch.search.fetch.subphase.highlight.HighlightBuilder;
 import org.elasticsearch.search.fetch.subphase.highlight.HighlightField;
 import org.elasticsearch.search.sort.SortOrder;
+import org.elasticsearch.search.suggest.Suggest;
+import org.elasticsearch.search.suggest.SuggestBuilder;
+import org.elasticsearch.search.suggest.SuggestBuilders;
+import org.elasticsearch.search.suggest.completion.CompletionSuggestion;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -188,6 +192,37 @@ public class HotelSearchTest {
 //            获取key，也就是品牌信息
             String key = bucket.getKeyAsString();
             System.out.println(key);
+        }
+    }
+
+    @Test
+    void testSuggest() throws IOException {
+//        1.准备request
+        SearchRequest request = new SearchRequest("hotel");
+//        2.准备DSL
+        request.source().suggest(
+                new SuggestBuilder().addSuggestion(
+                        "suggestions",
+                        SuggestBuilders.completionSuggestion("suggestion")
+                                .prefix("hz")
+                                .skipDuplicates(true)
+                                .size(10)
+                )
+        );
+//        3.发起请求
+        SearchResponse response = client.search(request, RequestOptions.DEFAULT);
+//        4.解析结果
+        System.out.println(response);
+
+        Suggest suggest = response.getSuggest();
+//        4.1 根据补查询名称，获取补全结果
+        CompletionSuggestion suggestions = suggest.getSuggestion("suggestions");
+//        4.2 获取options
+        List<CompletionSuggestion.Entry.Option> options = suggestions.getOptions();
+//        4.3 遍历
+        for (CompletionSuggestion.Entry.Option option : options) {
+            String text = option.getText().toString();
+            System.out.println(text);
         }
     }
 }

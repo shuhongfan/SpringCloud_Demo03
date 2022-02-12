@@ -8,6 +8,8 @@ import cn.itcast.hotel.pojo.RequestParams;
 import cn.itcast.hotel.service.IHotelService;
 import com.alibaba.fastjson.JSON;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import org.elasticsearch.action.delete.DeleteRequest;
+import org.elasticsearch.action.index.IndexRequest;
 import org.elasticsearch.action.search.SearchRequest;
 import org.elasticsearch.action.search.SearchResponse;
 import org.elasticsearch.client.RequestOptions;
@@ -26,6 +28,11 @@ import org.elasticsearch.search.aggregations.bucket.terms.Terms;
 import org.elasticsearch.search.fetch.subphase.highlight.HighlightField;
 import org.elasticsearch.search.sort.SortBuilders;
 import org.elasticsearch.search.sort.SortOrder;
+import org.elasticsearch.search.suggest.Suggest;
+import org.elasticsearch.search.suggest.SuggestBuilder;
+import org.elasticsearch.search.suggest.SuggestBuilders;
+import org.elasticsearch.search.suggest.completion.CompletionSuggestion;
+import org.elasticsearch.xcontent.XContentType;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.util.CollectionUtils;
@@ -132,16 +139,82 @@ public class HotelService extends ServiceImpl<HotelMapper, Hotel> implements IHo
             Aggregations aggregations = response.getAggregations();
 //        4.1 根据品牌名称，获取品牌结果
             List<String> brandList = getAggByName(aggregations, "brandAgg");
-            result.put("品牌", brandList);
+            result.put("brand", brandList);
             List<String> cityList = getAggByName(aggregations, "cityAgg");
-            result.put("城市", cityList);
+            result.put("city", cityList);
             List<String> startList = getAggByName(aggregations, "starAgg");
-            result.put("星级", startList);
+            result.put("starName", startList);
             return result;
         } catch (IOException e) {
             e.printStackTrace();
         }
         return null;
+    }
+
+    @Override
+    public List<String> getSuggestion(String prefix) {
+        try {
+            //        1.准备request
+            SearchRequest request = new SearchRequest("hotel");
+//        2.准备DSL
+            request.source().suggest(
+                    new SuggestBuilder().addSuggestion(
+                            "suggestions",
+                            SuggestBuilders.completionSuggestion("suggestion")
+                                    .prefix(prefix)
+                                    .skipDuplicates(true)
+                                    .size(10)
+                    )
+            );
+//        3.发起请求
+            SearchResponse response = client.search(request, RequestOptions.DEFAULT);
+//        4.解析结果
+            Suggest suggest = response.getSuggest();
+//        4.1 根据补查询名称，获取补全结果
+            CompletionSuggestion suggestions = suggest.getSuggestion("suggestions");
+//        4.2 获取options
+            List<CompletionSuggestion.Entry.Option> options = suggestions.getOptions();
+//        4.3 遍历
+            List<String> list = new ArrayList<>();
+            for (CompletionSuggestion.Entry.Option option : options) {
+                String text = option.getText().toString();
+                list.add(text);
+            }
+            return list;
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    @Override
+    public void deleteById(Long id) {
+        try {
+            client.delete(new DeleteRequest("hotel", String.valueOf(id)), RequestOptions.DEFAULT);
+        } catch (IOException e) {
+            e.printStackTrace();
+            throw new RuntimeException(e);
+        }
+    }
+
+    @Override
+    public void insertById(Long id) {
+        try {
+//        1.准备request
+            Hotel hotel = getById(id);
+            //        转换为文档类型
+            HotelDoc hotelDoc = new HotelDoc(hotel);
+
+//        1.准备Request
+            IndexRequest request = new IndexRequest("hotel").id(hotel.getId().toString());
+//        2.准备Json文档
+            request.source(JSON.toJSONString(hotelDoc), XContentType.JSON);
+//        3.发送请求
+            client.index(request, RequestOptions.DEFAULT);
+        } catch (IOException e) {
+            e.printStackTrace();
+            throw new RuntimeException(e);
+        }
     }
 
 
