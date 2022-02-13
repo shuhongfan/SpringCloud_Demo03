@@ -5,9 +5,6 @@ import cn.itcast.user.pojo.User;
 import cn.itcast.user.service.UserService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.cloud.context.config.annotation.RefreshScope;
-import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDateTime;
@@ -29,12 +26,12 @@ public class UserController {
     private PatternProperties patternProperties;
 
     @GetMapping("now")
-    public String now(){
+    public String now() {
         return LocalDateTime.now().format(DateTimeFormatter.ofPattern(patternProperties.getDateformat()));
     }
 
     @GetMapping("prop")
-    public PatternProperties prop(){
+    public PatternProperties prop() {
         return patternProperties;
     }
 
@@ -46,8 +43,12 @@ public class UserController {
      */
     @GetMapping("/{id}")
     public User queryById(@PathVariable("id") Long id,
-                          @RequestHeader(value = "truth",required = false) String truth) {
-        System.out.println("truth:"+truth);
+                          @RequestHeader(value = "truth", required = false) String truth) throws InterruptedException {
+        if (id == 1) {
+            Thread.sleep(60);
+        } else if (id == 2) {
+            throw new RuntimeException("故意出错");
+        }
         return userService.queryById(id);
     }
 }
