@@ -5,6 +5,7 @@
       <module fileurl="file://$PROJECT_DIR$/.idea/SpringCloud_Demo03.iml" filepath="$PROJECT_DIR$/.idea/SpringCloud_Demo03.iml" />
       <module fileurl="file://$PROJECT_DIR$/seata-demo/account-service/account-service.iml" filepath="$PROJECT_DIR$/seata-demo/account-service/account-service.iml" />
       <module fileurl="file://$PROJECT_DIR$/day01-SpringCloud01/cloud-demo.iml" filepath="$PROJECT_DIR$/day01-SpringCloud01/cloud-demo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/cloud-source-demo/cloud-demo (1).iml" filepath="$PROJECT_DIR$/cloud-source-demo/cloud-demo (1).iml" />
       <module fileurl="file://$PROJECT_DIR$/mq-demo/consumer/consumer.iml" filepath="$PROJECT_DIR$/mq-demo/consumer/consumer.iml" />
       <module fileurl="file://$PROJECT_DIR$/mq-advanced-demo/consumer/consumer (1).iml" filepath="$PROJECT_DIR$/mq-advanced-demo/consumer/consumer (1).iml" />
       <module fileurl="file://$PROJECT_DIR$/day01-SpringCloud01/eureka-server/eureka-server.iml" filepath="$PROJECT_DIR$/day01-SpringCloud01/eureka-server/eureka-server.iml" />
@@ -15,14 +16,33 @@
       <module fileurl="file://$PROJECT_DIR$/item-service/item-service.iml" filepath="$PROJECT_DIR$/item-service/item-service.iml" />
       <module fileurl="file://$PROJECT_DIR$/mq-advanced-demo/mq-advanced-demo.iml" filepath="$PROJECT_DIR$/mq-advanced-demo/mq-advanced-demo.iml" />
       <module fileurl="file://$PROJECT_DIR$/mq-demo/mq-demo.iml" filepath="$PROJECT_DIR$/mq-demo/mq-demo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/nacos-1.4.2/address/nacos-address.iml" filepath="$PROJECT_DIR$/nacos-1.4.2/address/nacos-address.iml" />
+      <module fileurl="file://$PROJECT_DIR$/nacos-1.4.2/nacos-all.iml" filepath="$PROJECT_DIR$/nacos-1.4.2/nacos-all.iml" />
+      <module fileurl="file://$PROJECT_DIR$/nacos-1.4.2/api/nacos-api.iml" filepath="$PROJECT_DIR$/nacos-1.4.2/api/nacos-api.iml" />
+      <module fileurl="file://$PROJECT_DIR$/nacos-1.4.2/auth/nacos-auth.iml" filepath="$PROJECT_DIR$/nacos-1.4.2/auth/nacos-auth.iml" />
+      <module fileurl="file://$PROJECT_DIR$/nacos-1.4.2/client/nacos-client.iml" filepath="$PROJECT_DIR$/nacos-1.4.2/client/nacos-client.iml" />
+      <module fileurl="file://$PROJECT_DIR$/nacos-1.4.2/cmdb/nacos-cmdb.iml" filepath="$PROJECT_DIR$/nacos-1.4.2/cmdb/nacos-cmdb.iml" />
+      <module fileurl="file://$PROJECT_DIR$/nacos-1.4.2/common/nacos-common.iml" filepath="$PROJECT_DIR$/nacos-1.4.2/common/nacos-common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/nacos-1.4.2/config/nacos-config.iml" filepath="$PROJECT_DIR$/nacos-1.4.2/config/nacos-config.iml" />
+      <module fileurl="file://$PROJECT_DIR$/nacos-1.4.2/consistency/nacos-consistency.iml" filepath="$PROJECT_DIR$/nacos-1.4.2/consistency/nacos-consistency.iml" />
+      <module fileurl="file://$PROJECT_DIR$/nacos-1.4.2/console/nacos-console.iml" filepath="$PROJECT_DIR$/nacos-1.4.2/console/nacos-console.iml" />
+      <module fileurl="file://$PROJECT_DIR$/nacos-1.4.2/core/nacos-core.iml" filepath="$PROJECT_DIR$/nacos-1.4.2/core/nacos-core.iml" />
+      <module fileurl="file://$PROJECT_DIR$/nacos-1.4.2/distribution/nacos-distribution.iml" filepath="$PROJECT_DIR$/nacos-1.4.2/distribution/nacos-distribution.iml" />
+      <module fileurl="file://$PROJECT_DIR$/nacos-1.4.2/example/nacos-example.iml" filepath="$PROJECT_DIR$/nacos-1.4.2/example/nacos-example.iml" />
+      <module fileurl="file://$PROJECT_DIR$/nacos-1.4.2/istio/nacos-istio.iml" filepath="$PROJECT_DIR$/nacos-1.4.2/istio/nacos-istio.iml" />
+      <module fileurl="file://$PROJECT_DIR$/nacos-1.4.2/naming/nacos-naming.iml" filepath="$PROJECT_DIR$/nacos-1.4.2/naming/nacos-naming.iml" />
+      <module fileurl="file://$PROJECT_DIR$/nacos-1.4.2/sys/nacos-sys.iml" filepath="$PROJECT_DIR$/nacos-1.4.2/sys/nacos-sys.iml" />
+      <module fileurl="file://$PROJECT_DIR$/nacos-1.4.2/test/nacos-test.iml" filepath="$PROJECT_DIR$/nacos-1.4.2/test/nacos-test.iml" />
       <module fileurl="file://$PROJECT_DIR$/day01-SpringCloud01/order-service/order-service.iml" filepath="$PROJECT_DIR$/day01-SpringCloud01/order-service/order-service.iml" />
       <module fileurl="file://$PROJECT_DIR$/seata-demo/order-service/order-service (1).iml" filepath="$PROJECT_DIR$/seata-demo/order-service/order-service (1).iml" />
+      <module fileurl="file://$PROJECT_DIR$/cloud-source-demo/order-service/order-service (2).iml" filepath="$PROJECT_DIR$/cloud-source-demo/order-service/order-service (2).iml" />
       <module fileurl="file://$PROJECT_DIR$/mq-demo/publisher/publisher.iml" filepath="$PROJECT_DIR$/mq-demo/publisher/publisher.iml" />
       <module fileurl="file://$PROJECT_DIR$/mq-advanced-demo/publisher/publisher (1).iml" filepath="$PROJECT_DIR$/mq-advanced-demo/publisher/publisher (1).iml" />
       <module fileurl="file://$PROJECT_DIR$/redis-demo/redis-demo.iml" filepath="$PROJECT_DIR$/redis-demo/redis-demo.iml" />
       <module fileurl="file://$PROJECT_DIR$/seata-demo/seata-demo.iml" filepath="$PROJECT_DIR$/seata-demo/seata-demo.iml" />
       <module fileurl="file://$PROJECT_DIR$/seata-demo/storage-service/storage-service.iml" filepath="$PROJECT_DIR$/seata-demo/storage-service/storage-service.iml" />
       <module fileurl="file://$PROJECT_DIR$/day01-SpringCloud01/user-service/user-service.iml" filepath="$PROJECT_DIR$/day01-SpringCloud01/user-service/user-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/cloud-source-demo/user-service/user-service (1).iml" filepath="$PROJECT_DIR$/cloud-source-demo/user-service/user-service (1).iml" />
     </modules>
   </component>
 </project>
